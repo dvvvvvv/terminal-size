@@ -40,9 +40,10 @@ pub fn terminal_size() -> Option<(Width, Height)> {
     Some((w, h))
 }
 
-#[cfg(windows)]
 #[test]
 fn test_windows_terminal_size () {
-    //asdf
-    println!("{}", terminal_size());
+    match terminal_size() {
+        Some((width, height)) => println!("terminal_size: {}, {}", width.0, height.0),
+        None => println!("terminal size none"),
+    };
 }

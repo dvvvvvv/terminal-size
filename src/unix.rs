@@ -81,3 +81,11 @@ fn compare_with_stty() {
         panic!("terminal_size() return None");
     }
 }
+
+#[test]
+fn test_unix_terminal_size () {
+    match terminal_size() {
+        Some((width, height)) => println!("terminal_size: {}, {}", width.0, height.0),
+        None => println!("terminal size none"),
+    };
+}

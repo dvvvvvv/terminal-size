@@ -34,7 +34,7 @@ jobs:
       - run: cargo build
       # FIXME: Cannot access /dev/stderr on Linux/macOs in Actions
       - if: runner.os == 'Windows'
-        run: cargo test
+        run: cargo test -- --nocapture
       # FIXME: The install-upgrade feature only exit on Rust 1.41.0
       #- shell: bash
       #  run: |
