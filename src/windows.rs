@@ -43,5 +43,6 @@ pub fn terminal_size() -> Option<(Width, Height)> {
 #[cfg(windows)]
 #[test]
 fn test_windows_terminal_size () {
+    //asdf
     println!("{}", terminal_size());
 }
