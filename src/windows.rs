@@ -39,3 +39,9 @@ pub fn terminal_size() -> Option<(Width, Height)> {
     let h: Height = Height((csbi.srWindow.Bottom - csbi.srWindow.Top + 1) as u16);
     Some((w, h))
 }
+
+#[cfg(windows)]
+#[test]
+fn test_windows_terminal_size () {
+    println!("{}", terminal_size());
+}
